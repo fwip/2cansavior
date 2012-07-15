@@ -4,7 +4,7 @@
         // Saves options to localStorage.
     function save_options() {
         var eviluser_textbox = document.getElementById("evilusers");
-        var evilusers = eviluser_textbox.value.toLowerCase().replace("/\s*//");
+        var evilusers = eviluser_textbox.value.toLowerCase().replace(/\s/g, "");
         localStorage["evilusers"] = evilusers;
         // Update status to let user know options were saved.
         var status = document.getElementById("status");
