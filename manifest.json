@@ -9,7 +9,7 @@
     {
         "matches": ["http://twocansandstring.com/*"],
         //"css": 
-        "js": ["jquery-1.7.2.min.js", "2cansavior.js"]
+        "js": ["2cansavior.js"]
     }
     ]
 }
