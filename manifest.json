@@ -1,0 +1,12 @@
+{
+    "name": "2cansavior",
+    "version": "0.0.1",
+    "content_scripts": [
+    {
+        "matches": ["http://twocansandstring.com/*"],
+        //"css": 
+        "js": ["jquery-1.7.2.min.js", "2cansavior.js"]
+    }
+    ]
+}
+        
