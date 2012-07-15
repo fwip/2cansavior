@@ -18,14 +18,12 @@ chrome.extension.sendMessage({greeting: "getusers"}, function(response) {
     evilusers=response.users;
 
     /* Main */
-    var posts = $("div").filter(function() {
-        return ($(this).css('border-bottom-left-radius') === '8px' );
-    });
     var i;
-    for (i=2; i<posts.length;i+=3){
-        var outer = posts[i];
-        var avatar = posts[i+1];
-        var content = posts[i+2];
+    var rows = document.getElementsByTagName('tr');
+    for (i=0; i<rows.length;i++){
+        var tds = rows[i].getElementsByTagName('td');
+        var avatar = tds[0];
+        var content = tds[1];
         if (shouldFilter(avatar, content)){
             content.innerHTML = "Message redacted.";
         }
