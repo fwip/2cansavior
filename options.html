@@ -1,0 +1,33 @@
+<html>
+    <head><title>2Cansavior Options</title></head>
+    <script type="text/javascript">
+        // Saves options to localStorage.
+    function save_options() {
+        var eviluser_textbox = document.getElementById("evilusers");
+        var evilusers = eviluser_textbox.value.toLowerCase().replace("/\s*//");
+        localStorage["evilusers"] = evilusers;
+        // Update status to let user know options were saved.
+        var status = document.getElementById("status");
+        status.innerHTML = "Options Saved.";
+        setTimeout(function() {
+            status.innerHTML = "";
+            }, 750);
+    }
+// Restores select box state to saved value from localStorage.
+function restore_options() {
+    var evilusers = localStorage["evilusers"];
+    if (!evilusers) {
+        return;
+    }
+    document.getElementById("evilusers").value = evilusers;
+}
+</script>
+<body onload="restore_options()">
+    <div id="status"></div>
+    Evil Users:
+    <input type="text" id="evilusers" label="Evil Users">
+    </input>
+    <br>
+    <button onclick="save_options()">Save</button>
+</body>
+</html>
