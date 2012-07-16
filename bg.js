@@ -1,7 +1,11 @@
 chrome.extension.onMessage.addListener(
     function(request, sender, sendResponse) {
         if (request.greeting === "getusers"){
-            sendResponse({users: localStorage.evilusers.split(',')});
+            var evilusers = localStorage.evilusers;
+            if (evilusers){
+                evilusers = evilusers.split(',');
+            }
+                sendResponse({users: evilusers});
         }
     }
     );
